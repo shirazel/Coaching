@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>שאלון מיפוי ואבחון | ליווי אישי להטמעת AI בעסק</title>
+<style>
+:root{--bg:#f4f6f8;--card:#fff;--text:#202124;--muted:#687078;--line:#d9dee3;--accent:#34495e;--soft:#eef2f5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,"Noto Sans Hebrew",sans-serif;line-height:1.65}
+.wrap{width:calc(100% - 32px);max-width:none;margin:24px auto;padding:0 0 48px;min-height:calc(100vh - 72px)}
+.hero{width:100%;background:var(--accent);color:#fff;border-radius:20px;padding:clamp(22px,4vh,38px) clamp(20px,4vw,42px);margin-bottom:20px}
+.hero h1{margin:0 0 6px;font-size:clamp(25px,3.2vw,36px)}.hero p{margin:0;opacity:.9;font-size:clamp(15px,1.6vw,19px)}
+.card{width:100%;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,30px);margin:16px 0;box-shadow:0 5px 18px #0000000b}
+.notice{background:var(--soft);border-radius:12px;padding:16px;margin:0 0 22px}
+h2{font-size:20px;margin:0 0 20px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.q{margin:24px 0}.q-title{font-weight:700;display:block;margin-bottom:9px}
+textarea,input[type=text]{width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;padding:12px 13px;font:inherit;color:var(--text);outline:none}
+textarea{min-height:clamp(110px,16vh,190px);resize:vertical}textarea:focus,input[type=text]:focus{border-color:var(--accent);box-shadow:0 0 0 3px #34495e16}
+.opts{display:grid;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:9px;padding:9px 11px;border:1px solid var(--line);border-radius:9px;cursor:pointer}
+.opt:hover{background:#fafbfc}
+input[type=checkbox],input[type=radio]{margin-top:5px;accent-color:var(--accent)}
+.scale{display:flex;gap:8px;flex-wrap:wrap}
+.scale label{min-width:45px;text-align:center;padding:8px 12px;border:1px solid var(--line);border-radius:9px;cursor:pointer}
+.actions{position:sticky;bottom:12px;z-index:5;background:#ffffffef;backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:20px}
+button{border:0;border-radius:9px;padding:11px 15px;font:inherit;cursor:pointer}
+.primary{background:var(--accent);color:#fff}.secondary{background:#e9edf0;color:var(--text)}
+.status{text-align:center;color:var(--muted);font-size:13px;margin-top:8px}
+.footer{text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+@media(max-width:900px){
+  .wrap{width:calc(100% - 24px);margin:16px auto;padding-bottom:32px}
+  .hero{border-radius:16px}
+  .card{border-radius:14px}
+  .action-buttons button{flex:1 1 220px}
+}
+@media(max-width:600px){
+  .wrap{width:calc(100% - 16px);margin:8px auto;padding-bottom:24px}
+  .hero{padding:22px 16px;border-radius:14px}
+  .card{padding:16px;margin:10px 0}
+  .q{margin:20px 0}
+  .opts{grid-template-columns:1fr}
+  .action-buttons{display:grid;grid-template-columns:1fr}
+  .action-buttons button{width:100%;min-height:46px}
+  .action-credit{font-size:11.5px}
+}
+@media(max-height:650px) and (min-width:601px){
+  .wrap{margin-top:12px;padding-bottom:24px}
+  .hero{padding:18px 28px}
+  .hero h1{font-size:27px}
+  .card{padding:20px}
+  textarea{min-height:90px}
+}
+@media print{body{background:#fff}.wrap{width:100%;max-width:none;margin:0;padding:0}.actions,.status{display:none}.card{box-shadow:none;break-inside:avoid}.hero{color:#000;background:#fff;border:1px solid var(--line)}}
+.credit-card{background:#fff;border:1px solid #e2e6ea;border-radius:12px;padding:17px 22px;margin:0 0 18px;text-align:center;box-shadow:0 3px 12px #00000008}.credit-name{font-weight:700;font-size:15px;color:#263238}.credit-role{font-size:13px;color:#687078;margin-top:2px}.credit-links{font-size:12.5px;margin-top:8px;color:#687078;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.credit-links a{color:#526677;text-decoration:none}.credit-links a:hover{text-decoration:underline}.copyright{font-size:11px;color:#9aa1a7;margin-top:9px}.credit-footer{max-width:920px;margin:28px auto 0;padding:20px 18px 8px;text-align:center;border-top:1px solid #dfe3e7;color:#687078}.credit-footer .credit-name{font-weight:700;font-size:15px;color:#34495e}.credit-footer .credit-role{font-size:13px;margin-top:2px}.credit-footer .credit-links{font-size:12.5px;margin-top:8px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}.credit-footer .credit-links a{color:#526677;text-decoration:none}.credit-footer .copyright{font-size:11px;color:#9aa1a7;margin-top:9px}
+
+.menu-panel{width:250px}}
+.menu-panel{width:255px}}
+.menu-panel{width:270px}}
+.actions{width:100%;background:#fff;border:1px solid #d9dee3;border-radius:16px;padding:13px 16px 10px;margin-top:20px;box-shadow:0 4px 14px #00000008}
+.action-buttons{display:flex;gap:9px;flex-wrap:wrap;justify-content:center}
+.action-buttons button{min-height:48px}
+.action-buttons .danger{color:#4b5560;background:#eef1f3}
+.action-credit{border-top:1px solid #e2e6ea;margin-top:11px;padding-top:10px;text-align:center;color:#687078;font-size:12.5px;line-height:1.55}
+.action-credit strong{color:#34495e}
+.action-contact{display:flex;justify-content:center;align-items:center;gap:9px;flex-wrap:wrap;margin-top:4px}
+.action-contact a{color:#526677;text-decoration:none}
+.action-contact a:hover{text-decoration:underline}
+.personal-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.personal-card .q{margin:0}.personal-card input{min-height:48px}
+@media(max-width:800px){.personal-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.personal-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+
+</div>
+</div>
+<div class="wrap">
+<header class="hero">
+<h1>שאלון מיפוי ואבחון</h1>
+<p>ליווי אישי להטמעת AI בעסק</p>
+</header>
+
+<div class="card">
+<div class="notice">
+<strong>כמה מילים לפני שמתחילים</strong><br>
+המטרה של השאלון היא להבין את העסק שלך, את הצרכים שלך, את המטרות שלך ואת הציפיות שלך מהליווי.
+אין צורך בידע מוקדם בבינה מלאכותית. ככל שתפרט יותר, כך אוכל להבין טוב יותר היכן אפשר ליצור עבורך ערך אמיתי באמצעות AI, ובאיזה אופן נכון לבנות את תהליך הליווי.
+<br><br>
+
+<br><br><strong>מומלץ לשמור גיבוי על המחשב מדי פעם.</strong> במקרה הצורך, ניתן לטעון את קובץ הגיבוי ולהמשיך מהמקום שבו הפסקת.
+</div>
+<div class="card personal-card">
+<h2>פרטים כלליים</h2>
+<div class="personal-grid">
+<div class="q">
+<label class="q-title" for="contact_name">שם מלא</label>
+<input id="contact_name" type="text" placeholder="הקלד/י את שמך המלא">
+</div>
+<div class="q">
+<label class="q-title" for="contact_phone">טלפון</label>
+<input id="contact_phone" type="text" inputmode="tel" placeholder="הקלד/י מספר טלפון">
+</div>
+<div class="q">
+<label class="q-title" for="contact_email">אימייל</label>
+<input id="contact_email" type="email" placeholder="הקלד/י כתובת אימייל">
+</div>
+</div>
+</div>
+<div id="form"></div>
+</div>
+
+<div class="actions">
+<div class="action-buttons">
+<button class="primary" onclick="downloadBackup()">הורדת גיבוי לתשובות</button>
+<button class="primary" onclick="document.getElementById('backupFile').click()">טעינת גיבוי</button>
+<input id="backupFile" type="file" accept=".json,application/json" style="display:none" onchange="loadBackup(event)">
+<button class="primary" onclick="downloadWord()">הורדת השאלון המלא והתשובות ל Word</button>
+<button class="secondary danger" onclick="clearAll()">ניקוי כל התשובות</button>
+</div>
+<div class="action-credit">
+<div><strong>© שירה רוט זליקוביץ</strong>, מומחית בטכנולוגיות בחינוך ובהוראה יצירתית עם AI</div>
+<div class="action-contact">
+<a href="https://wa.me/972523930628" target="_blank">ווטסאפ, 0523930628</a>
+<span>·</span>
+<a href="https://www.lomdot.org/" target="_blank">www.lomdot.org</a>
+<span>·</span>
+<a href="mailto:shiraroth.z@gmail.com">shiraroth.z@gmail.com</a>
+</div>
+</div>
+</div>
+<div class="status" id="status">התשובות נשמרות אוטומטית בדפדפן</div>
+
+</div>
+
+<script>
+const data=[
+["חלק 1, העסק שלך",[
+["1","ספר לי בקצרה על העסק שלך, למי אתה נותן שירות ומהם המוצרים או השירותים המרכזיים שלך?","ta"],
+["2","מהם מקורות ההכנסה המרכזיים שלך כיום?","ta"],
+["3","מה היית רוצה לפתח או להרחיב בעסק בתקופה הקרובה?","ta"],
+["4","מהו האתגר העסקי המרכזי שמעסיק אותך כיום?","ta"],
+["5","אילו משימות חוזרות גוזלות ממך כיום הכי הרבה זמן?","ta"]]],
+["חלק 2, מה היית רוצה להשיג באמצעות AI?",[
+["6","כשאתה חושב על שילוב AI בעסק שלך, מה היית רוצה שהוא יעשה עבורך?","check",["כתיבה ויצירת תוכן","שיווק ופרסום","ניהול רשתות חברתיות","ניהול לקוחות","ניהול פגישות ויומן","יצירת קורסים דיגיטליים","בניית אתר ודפי נחיתה","מכירת מוצרים ושירותים","ניתוח מידע ונתונים","אוטומציה של משימות חוזרות","ניהול מסמכים ומידע","מחקר ואיסוף מידע","יצירת מצגות וחומרי הדרכה","פיתוח רעיונות ומוצרים חדשים","אחר"] ],
+["7","אם AI היה יכול לפתור עבורך שלוש בעיות כבר מחר, מה היית בוחר?","ta"],
+["8","איזה תהליך היית הכי שמח להפסיק לבצע ידנית?","ta"],
+["9","מה היית רוצה שיקרה בעסק שלך בעוד חצי שנה בזכות AI?","ta"]]],
+["חלק 3, היכרותך וניסיונך עם AI",[
+["10","איך היית מתאר את הידע שלך כיום ב AI?","radio",["מתחיל","מכיר את הבסיס","משתמש באופן קבוע","יודע לבנות תהליכים","מתקדם","קשה לי להעריך"]],
+["11","באילו כלי AI אתה משתמש כיום?","check",["Claude","ChatGPT","Gemini","Canva AI","כלי יצירת תמונות","כלי יצירת וידאו","כלי אוטומציה","כלים אחרים","כמעט לא משתמש ב AI"]],
+["12","באיזו תדירות אתה משתמש ב AI?","radio",["כמעט אף פעם","פעם בכמה שבועות","כמה פעמים בשבוע","כמעט בכל יום","מספר פעמים ביום"]],
+["13","למה אתה משתמש כיום ב AI?","check",["כתיבה","רעיונות וסיעור מוחות","מחקר ואיסוף מידע","סיכום וניתוח מידע","יצירת תוכן","מצגות וחומרי הדרכה","יצירת תמונות","יצירת וידאו","אוטומציות","ניהול מידע","עבודה על העסק","כמעט לא משתמש"]],
+["14","מה כבר הצלחת לעשות באמצעות AI ואתה מרוצה ממנו?","check",["תוכן או טקסטים","חומרים ויזואליים","שיפור תהליכי עבודה","אוטומציה או תהליך חכם","פתרון ממשי לעסק","עדיין לא יצרתי משהו משמעותי","אחר, פרט"]],
+["15","איפה אתה מרגיש שאתה עדיין צריך עזרה?","check",["שימוש נכון בכלי AI","כתיבת פרומפטים","בניית תהליכים","אוטומציות וחיבורים","פתרונות מתקדמים","עדיין לא ברור לי","אחר, פרט"]],
+["16","מה היית רוצה לדעת יותר על AI?","check",["Claude","פרומפטים","Projects ו Skills","אוטומציות","סוכנים","חיבור בין מערכות","בניית אתרים וכלים","שיווק","קורסים דיגיטליים","ניהול העסק","עדיין לא ברור לי","אחר, פרט"]],
+["17","עד כמה אתה מרגיש בטוח בעבודה עם AI?","scale",["1","2","3","4","5"]],
+["18","אם היית יכול ללמוד השנה חמישה דברים חדשים ב AI, מה היית רוצה שהם יהיו?","ta"]]],,
+["חלק 4, איך היית רוצה שהעסק יעבוד?",[
+["19","אילו תהליכים היית רוצה להפוך לאוטומטיים או חכמים יותר?","check",["פניות ולקוחות","פגישות ויומן","תוכן ושיווק","מכירות","קורסים ומוצרים דיגיטליים","מסמכים ומידע","דוחות ומעקב","משימות חוזרות","אחר, פרט"]],
+["20","יש משימה חוזרת שהיית רוצה להעביר ל AI? אם כן, פרט.","ta"],
+["21","באילו מערכות וכלים העסק שלך משתמש כיום?","ta"],
+["22","אילו מערכות היית רוצה שיחוברו ביניהן?","ta"]]],
+["חלק 5, הציפיות שלך מהליווי",[
+["23","מה היית רוצה לקבל מהליווי?","check",["ללמוד להשתמש ב AI בצורה מקצועית","לבנות פתרונות אמיתיים לעסק","ללמוד אוטומציות ותהליכים","ללמוד סוכנים וכלים מתקדמים","לשפר שיווק ותוכן","לפתח מוצרים דיגיטליים","לייעל את העבודה","להיות עצמאי יותר בעבודה עם AI","אחר, פרט"]],
+["24","מה מבחינתך יהיה סימן שהליווי הצליח?","ta"],
+["25","בסיום התהליך, מה היית רוצה לדעת לעשות בעצמך?","ta"],
+["26","מה אתה מצפה ממני כמנטורית?","ta"],
+["27","איך היית רוצה שהליווי יתנהל?","radio",["בעיקר ללמוד","בעיקר לבנות יחד","ללמוד ואז לבצע בעצמי","שילוב בין למידה לבנייה","עדיין לא יודע"]],
+["28","עד כמה חשוב לך שבכל מפגש נצא עם תוצר מעשי שאפשר להשתמש בו בעסק?","scale",["1","2","3","4","5"]]]],
+["חלק 6, סדרי עדיפויות",[
+["29","מהם שלושת התחומים החשובים ביותר עבורך כרגע?","check",["ניהול העסק","שיווק ותוכן","מכירות","אתר","קורסים ומוצרים דיגיטליים","לקוחות ופגישות","אוטומציות","סוכנים ו AI מתקדם","ניהול מידע","אחר, פרט"]],
+["30","אם נתחיל בפרויקט אחד בלבד, מה היית רוצה שיהיה?","ta"],
+["31","יש משהו שהיית רוצה לעשות באמצעות AI ואינך יודע אם הוא אפשרי?","ta"]]],
+["חלק 7, זמן, למידה והתקדמות",[
+["32","כמה זמן בשבוע, מעבר למפגש, אתה מוכן להקדיש לתרגול ולביצוע?","ta"],
+["33","איזה קצב מתאים לך?","radio",["שבועי","אחת לשבועיים","עדיין לא יודע"]],
+["34","איך אתה לומד הכי טוב?","check",["הסבר ותרגול","הדגמה וביצוע","בנייה משותפת","משימות בין המפגשים","שילוב"]]]],
+["חלק 8, סיכום",[
+["35","במשפט אחד, מה הדבר שהכי היית רוצה להשיג באמצעות AI?","ta"],
+["36","יש משהו נוסף שחשוב לך שאדע לפני שנתחיל?","ta"]]]
+];
+
+const KEY="ai_coaching_mapping_v2";
+let state=JSON.parse(localStorage.getItem(KEY)||"{}");
+const root=document.getElementById("form");
+
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));document.getElementById("status").textContent="נשמר אוטומטית, "+new Date().toLocaleTimeString("he-IL",{hour:"2-digit",minute:"2-digit"});}
+function setVal(id,val){state[id]=val;save();}
+function render(){
+root.innerHTML="";
+data.forEach(sec=>{
+ const card=document.createElement("section");card.className="card";
+ const h=document.createElement("h2");h.textContent=sec[0];card.appendChild(h);
+ sec[1].forEach(q=>{
+  const [id,title,type,opts]=q;
+  const div=document.createElement("div");div.className="q";
+  const lab=document.createElement("label");lab.className="q-title";lab.textContent=title;div.appendChild(lab);
+  if(type==="ta"){
+   const el=document.createElement("textarea");el.dataset.id=id;el.value=state[id]||"";el.addEventListener("input",e=>setVal(id,e.target.value));div.appendChild(el);
+  }else{
+   const box=document.createElement("div");box.className=type==="scale"?"scale":"opts";
+   opts.forEach((o,i)=>{
+    const l=document.createElement("label");l.className="opt";
+    const el=document.createElement("input");el.type=type==="check"?"checkbox":(type==="radio"?"radio":"radio");el.name="q"+id;el.value=o;
+    if(type==="check"){
+ el.checked=(state[id]||[]).includes(o);
+ el.addEventListener("change",e=>{let a=state[id]||[];a=e.target.checked?[...new Set([...a,o])]:a.filter(x=>x!==o);setVal(id,a);});
+}
+    else {el.checked=state[id]===o;el.addEventListener("change",()=>setVal(id,o));}
+    l.appendChild(el);l.appendChild(document.createTextNode(o));box.appendChild(l);
+   });
+   div.appendChild(box);
+  }
+  card.appendChild(div);
+ });
+root.appendChild(card);
+});
+}
+render();
+
+
+["contact_name","contact_phone","contact_email"].forEach(function(id){
+ const el=document.getElementById(id);
+ el.value=state[id]||"";
+ el.addEventListener("input",function(){state[id]=el.value;save();});
+});
+
+function allQuestions(){
+ let out=[];
+ data.forEach(sec=>sec[1].forEach(q=>out.push(q)));
+ return out;
+}
+function answerText(id){
+ const v=state[id];
+ return Array.isArray(v)?v.join(", "):(v||"");
+}
+function downloadBackup(){
+ const blob=new Blob([JSON.stringify({savedAt:new Date().toISOString(),answers:state},null,2)],{type:"application/json;charset=utf-8"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="גיבוי_שאלון_מיפוי_AI.json";a.click();URL.revokeObjectURL(a.href);
+}
+function loadBackup(event){
+ const file=event.target.files[0];
+ if(!file)return;
+ if(!confirm("טעינת גיבוי תחליף את התשובות הנוכחיות בשאלון. להמשיך?")){
+   event.target.value="";
+   return;
+ }
+ const reader=new FileReader();
+ reader.onload=function(e){
+   try{
+     const imported=JSON.parse(e.target.result);
+     if(!imported || typeof imported.answers!=="object") throw new Error("invalid");
+     state=imported.answers;
+     localStorage.setItem(KEY,JSON.stringify(state));
+     render();
+     document.getElementById("status").textContent="הגיבוי נטען בהצלחה";
+     window.scrollTo({top:0,behavior:"smooth"});
+   }catch(err){
+     alert("לא ניתן לטעון את הקובץ. ודא שזהו קובץ גיבוי של השאלון.");
+   }
+   event.target.value="";
+ };
+ reader.readAsText(file);
+}
+function downloadWord(){
+ let html='<html lang="he" dir="rtl"><head><meta charset="utf-8"><style>body{font-family:Arial,sans-serif;direction:rtl;line-height:1.6}h1{font-size:25px}h2{font-size:19px;border-bottom:1px solid #ddd;padding-bottom:6px;margin-top:28px}h3{font-size:14px;margin-bottom:4px}p{white-space:pre-wrap;border-bottom:1px solid #eee;padding-bottom:10px}</style></head><body>';
+ html+='<h1>שאלון מיפוי ואבחון</h1><p>ליווי אישי להטמעת AI בעסק</p>';
+html+='<h2>פרטים כלליים</h2>';
+html+='<h3>שם מלא</h3><p>'+esc(state.contact_name||"")+'</p>';
+html+='<h3>טלפון</h3><p>'+esc(state.contact_phone||"")+'</p>';
+html+='<h3>אימייל</h3><p>'+esc(state.contact_email||"")+'</p>';
+ data.forEach(sec=>{html+="<h2>"+esc(sec[0])+"</h2>";sec[1].forEach(q=>{html+="<h3>"+esc(q[0]+". "+q[1])+"</h3><p>"+esc(answerText(q[0]))+"</p>";});});
+ html+="</body></html>";
+ const blob=new Blob(["\ufeff",html],{type:"application/msword"});
+ const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="שאלון_מיפוי_AI_ותשובות.doc";a.click();URL.revokeObjectURL(a.href);
+}
+function clearAll(){
+ if(confirm("למחוק את כל התשובות השמורות בדפדפן?")){
+  localStorage.removeItem(KEY);state={};render();document.getElementById("status").textContent="התשובות נמחקו";
+ }
+}
+
+
+
+
+</script>
+</body>
+</html>
